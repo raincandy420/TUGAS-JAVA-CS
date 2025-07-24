@@ -1,0 +1,277 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #171810;
+}
+
+/* Background matrix effect */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Title styling */
+h1 {
+    margin-top: 30px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e, 0 0 30px #03fa6e;
+}
+
+/* Container for wheel and input */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Wheel container */
+.wheel-container {
+    position: relative;
+}
+
+/* Wheel canvas */
+#wheelCanvas {
+    width: 500px;
+    height: 500px;
+    transform-origin: center;
+    transition: transform 3s ease-out;
+    background-color: #171810;
+    border-radius: 50%;
+    border: 5px solid #03fa6e;
+    box-shadow: 0 0 20px #03fa6e;
+}
+
+/* Pointer triangle */
+.pointer {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 30px solid #03fa6e;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Input section */
+.input-section {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #03fa6e;
+    box-shadow: 0 0 10px #03fa6e;
+    text-align: center;
+    width: 250px;
+}
+
+.input-section input[type="text"],
+.input-section input[type="text"]:focus {
+  width: 90%;
+  padding: 10px;
+  border: 2px solid #03fa6e;
+  border-radius: 6px;
+  background: transparent;
+  color: #03fa6e;
+  font-size: 1.1em;
+  outline: none;
+  box-shadow: 0 0 10px #03fa6e;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-section input[type="text"]:-webkit-autofill,
+.input-section input[type="text"]:-webkit-autofill:focus,
+.input-section input[type="text"]:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #03fa6e !important;
+  color: #03fa6e !important;
+  border: 2px solid #03fa6e !important;
+  transition: background-color 5000s ease-in-out 0s;
+  background: transparent !important;
+}
+
+.input-section input[type="text"]::placeholder {
+  color: #00ffab99;
+  opacity: 1;
+  text-shadow: 0 0 8px #03fa6e;
+}
+
+#inputList {
+    margin-bottom: 10px;
+    color: #03fa6e;
+    max-height: 180px;   /* 5 lines x 1.5em line height */
+    overflow-y: auto;
+   margin-bottom: 1em;
+}
+#inputList p {
+  margin: 0.2em 0;
+  line-height: 1.5em;
+}
+/* Neon scrollbar for Webkit browsers */
+#inputList::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+  display: block;
+}
+#inputList::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffab, #03fa6e, #00ffab);
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffab, 0 0 20px #03fa6e;
+}
+#inputList::-webkit-scrollbar-thumb:hover {
+  background: #00ffab;
+  box-shadow: 0 0 20px #00ffab, 0 0 40px #03fa6e;
+}
+#inputList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    background-color: #171810;
+    border: 2px solid #03fa6e;
+    color: #03fa6e;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #03fa6e;
+    box-shadow: 0 0 15px #03fa6e;
+    transition: 0.3s ease;
+    width: 200px;
+}
+
+button:hover {
+    background-color: #03fa6e;
+    color: #171810;
+    box-shadow: 0 0 25px #03fa6e, 0 0 35px #03fa6e, 0 0 45px #03fa6e;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(23, 24, 16, 0.95);
+    color: #03fa6e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #03fa6e;
+    text-align: center;
+    z-index: 1000;
+    width: 300px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-content h2 {
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e;
+}
+
+.modal-content p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.modal-content button {
+    background-color: #171810;
+    border: 2px solid #03fa6e;
+    color: #03fa6e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #03fa6e;
+    transition: 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #03fa6e;
+    color: #171810;
+    box-shadow: 0 0 25px #03fa6e, 0 0 35px #03fa6e, 0 0 45px #03fa6e;
+}
+
+/* 🔹 Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    #wheelCanvas {
+        width: 250px;
+        height: 250px;
+    }
+
+    .pointer {
+        right: -28px; /* Tetap di kanan lingkaran */
+        top: 50%;
+        transform: translateY(-50%);
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-right: 20px solid #03fa6e;
+    }
+
+    .inputList {
+        max-width: 50%; 
+        
+    }
+
+    .input-section {
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .input-controls, .input-contorls {
+        width: 60%;
+        gap: 6px;
+        padding: 0;
+    }
+
+      #inputList {
+        width: 100%;
+        max-width: 150Px;
+        font-size: 0.95em;
+    }
+
+    button {
+        width: 80%;
+    }
+}

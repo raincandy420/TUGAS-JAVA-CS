@@ -1,0 +1,29 @@
+game concept
+
+platform 8 but touhou
+this game is side scroller
+when scrolling throught 8 places aka patrol there will be 1 incidents in the place
+reimu cant go back to her shrine if all the incidents hasn't been resolved
+same like the platform 8
+that 8 places is one map you need to scroll throught
+after resolving one incident the map loop back to the begining with new incident
+and you can go back to the map where the incident has been resolved
+and there's no time list of incidents that would appear its all toltaly random but can not never be the same incident
+
+mc: reimu
+life: 3
+spell card: fantasy seal
+have reimu spawn 8 homing rainbow orbs dealing 5 dmg each cooldown 10 second
+attack long range: persuasion needle 
+deal 2 dmg each needle and spam able
+short range: ying yang orbs
+have reimu span 2 ying yang orbs around her deal 4 dmg every second
+
+every char has 40 hp
+place:
+1 scarlet devil mansion
+char: hong meiling
+a powerful yokai girl that has short combat ability, will block reimu ying yang orbs. hint attack with needle
+2 Somewhere along the boundaries of Gensokyo
+char: yukari yakumo
+a gap youkai that can summon portal to gap away all reimu bullet the only way to defeat her is with short attack where the gap is small enough to hit her

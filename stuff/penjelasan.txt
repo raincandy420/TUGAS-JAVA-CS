@@ -1,0 +1,41 @@
+Analisis Konsep Tabel dalam HTML Berdasarkan Kode Saya
+Jadi, di sini saya mencoba membuat tabel di HTML untuk menampilkan daftar siswa beserta nomor absennya. 
+Dari latihan ini, saya jadi paham bagaimana tabel dalam HTML bekerja dan bagaimana cara menyusun data agar lebih rapi dan mudah dibaca.
+
+1. Apa Itu Tabel di HTML?
+Tabel di HTML itu seperti tabel biasa yang sering kita lihat di buku atau Excel. 
+Fungsinya buat menyusun data dalam bentuk baris dan kolom supaya lebih terstruktur. 
+Elemen-elemen utama yang digunakan:
+
+<table> → Ini wadah utama buat tabel.
+<tr> → Ini buat baris dalam tabel.
+<th> → Ini buat judul kolom (biasanya tebal).
+<td> → Ini buat isi datanya di dalam tabel.
+<thead> & <tbody> → Biar tabel lebih terorganisir, bagian atasnya dipisah dari isi datanya.
+Tabel ini berguna buat nyusun data kayak daftar siswa, jadwal, atau laporan kehadiran supaya lebih gampang dibaca.
+
+2. Bagaimana Kode Saya Menerapkan Konsep Ini?
+Di kode saya, saya pakai <thead> buat bagian kepala tabel yang isinya nama kolom: "No", "Nama", dan "No Absen". 
+Ini penting biar orang yang baca langsung tahu tiap kolom itu isinya apa.
+
+Terus di bagian <tbody>, saya masukin data siswa satu per satu. 
+Tiap siswa punya satu baris yang terdiri dari tiga kolom: nomor urut, nama, dan nomor absen. Dengan cara ini, 
+tabelnya jadi lebih rapi dan informasinya lebih gampang dipahami.
+
+3. Hal yang Bagus dan Bisa Ditingkatkan
+Yang udah bagus:
+Susunan tabelnya rapi dan mudah dibaca.
+Pakai <thead> dan <tbody> biar struktur tabel lebih jelas.
+Data disusun per baris, jadi gampang dipahami.
+Yang bisa diperbaiki:
+Tampilan masih polos, kalau pakai CSS pasti lebih menarik.
+Belum responsif, kalau dilihat di HP mungkin tampilannya kurang bagus.
+Masih pakai align="center", padahal itu cara lama. Lebih baik pakai CSS buat atur posisi teks.
+
+Kesimpulan
+Dari latihan ini, saya jadi ngerti cara kerja tabel di HTML. 
+Sekarang saya tahu gimana cara menyusun data biar 
+lebih rapi dan gampang dibaca. 
+Tapi, kalau mau tabelnya lebih keren, saya harus belajar CSS buat bikin 
+tampilannya lebih menarik dan nyaman dilihat di berbagai ukuran layar.
+Latihan ini cukup sederhana, tapi berguna banget buat dasar-dasar HTML

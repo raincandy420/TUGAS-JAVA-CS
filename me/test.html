@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Music Auto-Play</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgb(242,231,166), rgb(182,137,51));
+            font-family: 'Poppins', sans-serif;
+            color: rgb(182,137,51);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-card {
+            background: rgba(227,190,102, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            margin: 20px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 30px rgba(182,137,51, 0.3);
+        }
+
+        .music-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #6bc399, #89d89b);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 195, 153, 0.3);
+            min-width: 80px;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 195, 153, 0.4);
+        }
+
+        .control-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .volume-slider {
+            width: 120px;
+            height: 5px;
+            border-radius: 5px;
+            background: rgba(182,137,51, 0.3);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6bc399;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(107, 195, 153, 0.4);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6bc399;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(107, 195, 153, 0.4);
+        }
+
+        .status {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(107, 195, 153, 0.1);
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .code-section {
+            background: rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .code-section h3 {
+            margin-top: 0;
+            color: rgb(182,137,51);
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #333;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .warning {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .tip {
+            background: rgba(107, 195, 153, 0.1);
+            border-left: 4px solid #6bc399;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            .music-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .control-btn {
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden audio element for background music -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="your-music-file.mp3" type="audio/mpeg">
+        <source src="your-music-file.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="demo-card">
+        <h2>🎵 Background Music Demo</h2>
+        <p>This demo shows how to implement auto-playing background music on your website.</p>
+        
+        <div class="status" id="musicStatus">
+            Status: Ready to play
+        </div>
+
+        <div class="music-controls">
+            <button class="control-btn" id="playBtn">▶️ Play</button>
+            <button class="control-btn" id="pauseBtn">⏸️ Pause</button>
+            <button class="control-btn" id="stopBtn">⏹️ Stop</button>
+        </div>
+
+        <div class="volume-control">
+            <span>🔊</span>
+            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50">
+            <span id="volumeValue">50%</span>
+        </div>
+    </div>
+
+    <div class="demo-card">
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Modern browsers block auto-playing audio with sound to improve user experience. The music will only auto-play after the user interacts with the page (clicks, taps, etc.).
+        </div>
+
+        <div class="tip">
+            <strong>💡 Tip:</strong> You can start with muted audio and then unmute after user interaction, or show a "Click to enable sound" button.
+        </div>
+    </div>
+
+    <div class="demo-card">
+        <div class="code-section">
+            <h3>1. HTML - Add Audio Element</h3>
+            <div class="code-block">&lt;!-- Add this to your HTML --&gt;
+&lt;audio id="backgroundMusic" loop preload="auto" autoplay muted&gt;
+    &lt;source src="your-music-file.mp3" type="audio/mpeg"&gt;
+    &lt;source src="your-music-file.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</div>
+        </div>
+
+        <div class="code-section">
+            <h3>2. JavaScript - Auto-Play Implementation</h3>
+            <div class="code-block">// Add to your existing JavaScript or create new script
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+// Set initial volume (0.0 to 1.0)
+backgroundMusic.volume = 0.3; // 30% volume
+
+// Try to play immediately when page loads
+window.addEventListener('load', () => {
+    backgroundMusic.play().then(() => {
+        console.log('Music started playing automatically');
+    }).catch((error) => {
+        console.log('Auto-play blocked:', error);
+        // Show user interaction prompt
+        showMusicPrompt();
+    });
+});
+
+// Enable music on first user interaction
+document.addEventListener('click', enableMusic, { once: true });
+document.addEventListener('touchstart', enableMusic, { once: true });
+
+function enableMusic() {
+    backgroundMusic.muted = false;
+    backgroundMusic.play();
+}
+
+function showMusicPrompt() {
+    // You can show a button or notification here
+    console.log('Click anywhere to enable music');
+}</div>
+        </div>
+
+        <div class="code-section">
+            <h3>3. CSS - Optional Music Control Button</h3>
+            <div class="code-block">/* Optional: Add a music toggle button */
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #6bc399, #89d89b);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(107, 195, 153, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(107, 195, 153, 0.4);
+}</div>
+        </div>
+
+        <div class="code-section">
+            <h3>4. Complete Implementation for Your Site</h3>
+            <div class="code-block">// Add this to your existing HTML (before closing &lt;/body&gt; tag)
+&lt;audio id="backgroundMusic" loop preload="auto"&gt;
+    &lt;source src="path/to/your/music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="path/to/your/music.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;
+
+&lt;button id="musicToggle" class="music-toggle"&gt;🎵&lt;/button&gt;
+
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('backgroundMusic');
+    const toggle = document.getElementById('musicToggle');
+    let isPlaying = false;
+    
+    // Set volume
+    music.volume = 0.3;
+    
+    // Auto-play attempt
+    const playMusic = () => {
+        music.play().then(() => {
+            isPlaying = true;
+            toggle.textContent = '🔊';
+        }).catch(() => {
+            console.log('Auto-play blocked');
+        });
+    };
+    
+    // Try to play on page load
+    playMusic();
+    
+    // Enable on first interaction
+    document.addEventListener('click', playMusic, { once: true });
+    
+    // Toggle button functionality
+    toggle.addEventListener('click', () => {
+        if (isPlaying) {
+            music.pause();
+            toggle.textContent = '🔇';
+            isPlaying = false;
+        } else {
+            music.play();
+            toggle.textContent = '🔊';
+            isPlaying = true;
+        }
+    });
+});
+&lt;/script&gt;</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('backgroundMusic');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const volumeValue = document.getElementById('volumeValue');
+            const status = document.getElementById('musicStatus');
+
+            // Set initial volume
+            music.volume = 0.5;
+
+            // Update status
+            function updateStatus(text) {
+                status.textContent = `Status: ${text}`;
+            }
+
+            // Demo uses a data URL for a simple beep tone (replace with your music file)
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            // Create a simple demo tone (replace this with your actual music file)
+            music.src = 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJXfH8N2QQAoUXrTp66hVFApGn+DyvmwhCjuB0PLah0AKGWq+8OucQQc';
+
+            // Control buttons
+            playBtn.addEventListener('click', () => {
+                music.play().then(() => {
+                    updateStatus('Playing');
+                }).catch((error) => {
+                    updateStatus('Play blocked - click anywhere first');
+                });
+            });
+
+            pauseBtn.addEventListener('click', () => {
+                music.pause();
+                updateStatus('Paused');
+            });
+
+            stopBtn.addEventListener('click', () => {
+                music.pause();
+                music.currentTime = 0;
+                updateStatus('Stopped');
+            });
+
+            // Volume control
+            volumeSlider.addEventListener('input', (e) => {
+                const volume = e.target.value / 100;
+                music.volume = volume;
+                volumeValue.textContent = `${e.target.value}%`;
+            });
+
+            // Try auto-play (will likely be blocked)
+            setTimeout(() => {
+                music.play().then(() => {
+                    updateStatus('Auto-playing');
+                }).catch(() => {
+                    updateStatus('Auto-play blocked - user interaction required');
+                });
+            }, 1000);
+
+            // Enable music on first user interaction
+            document.addEventListener('click', () => {
+                if (music.paused) {
+                    music.play().then(() => {
+                        updateStatus('Playing after user interaction');
+                    });
+                }
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>

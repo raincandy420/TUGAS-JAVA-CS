@@ -1,0 +1,170 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Fallback background */
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+h1 {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e, 0 0 30px #03fa6e;
+    -webkit-text-stroke: 2px #03fa6e; /* Outline in green */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #03fa6e;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    background-color: rgba(23, 24, 16, 0.9); /* Semi-transparent background */
+    z-index: 1;
+}
+
+.card-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-direction: row;
+}
+
+.card {
+    background-color: #171810;
+    border: 2px solid #03fa6e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px; /* Add margin for spacing when cards wrap */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(3, 250, 110, 0.5);
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #03fa6e;
+    text-transform: uppercase;
+}
+
+.card p {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Center the Wali Kelas card */
+.card-group.wali-kelas {
+    justify-content: center;
+}
+
+/* Responsive design for Android and smaller devices */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 30px; /* Reduce heading size */
+    }
+
+    .card-container {
+        padding: 15px;
+        max-width: 90%; /* Reduce container width */
+    }
+
+    .card {
+        width: 100%; /* Make cards take full width */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .card h2 {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    .card p {
+        font-size: 14px; /* Reduce font size */
+    }
+}
+
+.card svg {
+      width: 48px;
+    height: 48px;
+    margin: 0 8px;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.card-group.wali-kelas {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.card-group.wali-kelas .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    padding: 16px 24px;
+}
+
+.card-group.wali-kelas .card svg {
+    margin-bottom: 8px;
+}
+
+.card-group.wali-kelas .card p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .card svg {
+        width: 36px;
+        height: 36px;
+        padding: 4px;
+    }
+    .card-group.wali-kelas .card {
+        padding: 10px 8px;
+    }
+}
+
+.homeroom-teacher {display: flex;
+    flex-direction: row;
+gap: 10px;}
+/* Add to your CSS file, e.g., style.css */
+.card svg,
+.homeroom-teacher svg {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+    stroke: #39ff14 !important; /* Neon green outline */
+    fill: #39ff14 !important;      /* No fill, just outline */
+}

@@ -1,0 +1,203 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #121212;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e, 0 0 30px #03fa6e;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Container to align wheel and input display */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Wheel container */
+.wheel-container {
+    position: relative;
+}
+
+/* Wheel styling */
+canvas  {
+    transform-origin: center;
+    transition: transform 3s ease-out;
+    background-color: #171810; /* Dark background */
+    border-radius: 50%;
+    border: 5px solid #03fa6e; /* Themed border */
+    box-shadow: 0 0 20px #03fa6e;
+}
+
+.pointer {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 30px solid #03fa6e;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Input section */
+.input-section {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #03fa6e;
+    box-shadow: 0 0 10px #03fa6e;
+    text-align: center;
+    width: 250px;
+}
+
+#inputList {
+    margin-bottom: 10px;
+    color: #03fa6e;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    background-color: #171810;
+    border: 2px solid #03fa6e;
+    color: #03fa6e;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #03fa6e;
+    box-shadow: 0 0 15px #03fa6e;
+    transition: 0.3s ease;
+    width: 200px;
+}
+
+button:hover {
+    background-color: #03fa6e;
+    color: #171810;
+    box-shadow: 0 0 25px #03fa6e, 0 0 35px #03fa6e, 0 0 45px #03fa6e;
+}
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(23, 24, 16, 0.95);
+    color: #03fa6e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #03fa6e;
+    text-align: center;
+    z-index: 1000;
+    width: 300px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-content h2 {
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e;
+}
+
+.modal-content p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.modal-content button {
+    background-color: #171810;
+    border: 2px solid #03fa6e;
+    color: #03fa6e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #03fa6e;
+    transition: 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #03fa6e;
+    color: #171810;
+    box-shadow: 0 0 25px #03fa6e, 0 0 35px #03fa6e, 0 0 45px #03fa6e;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keep it behind all other elements */
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .button-container {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    button {
+        width: calc(50% - 10px);
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}

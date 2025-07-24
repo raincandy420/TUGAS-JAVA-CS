@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Shot Roulette</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            font-size: 32px;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .box {
+            border: 2px solid #fff;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .box-header {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+        .section {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .ascii-art {
+            font-size: 14px;
+            white-space: pre-wrap;
+            color: #fff;
+        }
+        .inventory-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .inventory-box {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .dealer-inventory-box {
+            flex: 1;
+            margin-left: 10px;
+        }
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .shotgun-box {
+            flex: 1;
+        }
+        .hp-box {
+            flex: 1;
+            margin-left: 10px;
+        }
+        .choices {
+            margin-top: 20px;
+        }
+        .choice-button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .choice-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Back Shot Roulette</h1>
+    <div class="container">
+        <!-- Merged Inventory Box -->
+        <div class="box">
+            <div class="box-header">Inventory</div>
+            <div class="section inventory-container">
+                <div class="inventory-box">
+                    <pre class="ascii-art">
+Your Inventory:
+🍺 Beer: <span id="playerBeer">0</span>    🚬 Cigarette: <span id="playerCigarette">0</span>
+⛓️ Cuff: <span id="playerCuff">0</span>    🔍 Magnifying: <span id="playerMagnifying">0</span>
+                    </pre>
+                </div>
+                <div class="dealer-inventory-box">
+                    <pre class="ascii-art">
+Dealer's Inventory:
+🍺 Beer: <span id="dealerBeer">0</span>    🚬 Cigarette: <span id="dealerCigarette">0</span>
+⛓️ Cuff: <span id="dealerCuff">0</span>    🔍 Magnifying: <span id="dealerMagnifying">0</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Flow Box -->
+        <div class="box">
+            <div class="box-header">Game Flow</div>
+            <div class="section">
+                <pre class="ascii-art" id="gameFlowText">
+Turn 1: Player's move. 
+Use the buttons below to choose an action.
+                </pre>
+            </div>
+        </div>
+
+        <!-- Merged Shotgun & HP Status Box -->
+        <div class="box">
+            <div class="box-header">Status</div>
+            <div class="status-container">
+                <!-- Shotgun Status Box -->
+                <div class="shotgun-box">
+                    <pre class="ascii-art" id="shotgunStatus">
+Shotgun:
+Blanks: [0]  Live: [0]
+
+╔════════════╗
+║ ▓ ▓ ▓ ▓ ▓ ║
+║ ▓ ▓ ▓ ▓ ▓ ║   Shotgun
+║ ▓ ▓ ▓ ▓ ▓ ║   Ready
+╚════════════╝
+                    </pre>
+                </div>
+
+                <!-- HP Status Box -->
+                <div class="hp-box">
+                    <pre class="ascii-art">
+HP Status:
+Player HP: [<span id="playerHp">3</span>]  
+Dealer HP: [<span id="dealerHp">3</span>]  
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="choices">
+            <button class="choice-button" id="shootSelfButton">Shoot Self</button>
+            <button class="choice-button" id="shootDealerButton">Shoot Dealer</button>
+            <button class="choice-button" id="useItemButton">Use Item</button>
+            <button class="choice-button" id="startButton">Start Game</button>
+        </div>
+    </div>
+
+    <script src="backshot.js"></script>
+</body>
+</html>

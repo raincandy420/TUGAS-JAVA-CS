@@ -1,0 +1,148 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181c20;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Matrix background canvas */
+canvas#matrix {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Main container */
+.box-container {
+    background-color: rgba(23, 24, 16, 0.85);
+    padding: 24px 16px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #03fa6e;
+    width: 75vw;
+    height: 75vh;
+    max-width: 1200px;
+    min-width: 320px;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards 1s;
+    display: flex;
+    flex-direction: column; /* Stack details vertically */
+    gap: 24px;
+    margin: 60px auto 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in WebKit browsers */
+.box-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsive: mobile/tablet */
+@media (max-width: 900px) {
+    .box-container {
+        width: 98vw;
+        height: 75vh;
+        padding: 1.2rem 0.5rem;
+        margin: 30px auto 0 auto;
+        gap: 0;
+    }
+}
+@media (max-width: 600px) {
+    .box-container {
+        min-width: unset;
+        padding: 1.2rem 0.5rem;
+    }
+    details {
+        padding: 0.7rem;
+    }
+    #clock {
+        font-size: 1rem;
+        padding: 0.4rem 0.7rem;
+    }
+}
+
+/* Heading styles */
+h1, .box-container {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e, 0 0 30px #03fa6e;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Details (accordion) styles */
+details {
+    background: #23272b;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px #03fa6e44;
+    border: 1px solid #03fa6e44;
+    transition: box-shadow 0.3s;
+}
+
+details[open] {
+    box-shadow: 0 0 16px #03fa6e;
+}
+
+details[open] summary h1 {
+    color: #03fa6e;
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e;
+}
+
+summary {
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+}
+
+summary h1 {
+    display: inline;
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 0 10px #03fa6e88;
+}
+
+/* Image styles */
+details img {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #03fa6e;
+    border: 1px solid #03fa6e44;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

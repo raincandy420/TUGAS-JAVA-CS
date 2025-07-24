@@ -1,0 +1,330 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgb(242,231,166), rgb(182,137,51));
+    font-family: 'Poppins', sans-serif;
+    color: rgb(182,137,51);
+    overflow-x: hidden;
+}
+
+h1, p {
+    color: rgb(182,137,51);
+}
+
+.cards-container {
+    width: clamp(300px, 90%, 1000px);
+    margin: auto;
+    padding: 20px;
+    z-index: 1;
+    display: flex; /* Use Flexbox for layout */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    align-items: stretch; /* Stretch items to the same height */
+    justify-content: space-between; /* Distribute space between items */
+    gap: 20px; /* Add spacing between the profile and game favorites */
+}
+
+
+.gameFavorites{
+    flex: 1; /* Allow the game favorites section to take up equal space */
+    display: flex;
+    flex-direction: column; /* Ensure content inside the game favorites stacks vertically */
+    min-width: 300px; /* Ensure a minimum width for the section */
+    border-radius: 1rem;
+    padding: 1rem;
+    max-height: 500px;
+}
+
+.game-images {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: auto; /* Set a maximum height for the scrollable area */
+    padding-right: 10px; /* Add padding to prevent content from being cut off */
+   overflow-x: hidden;
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.game-images::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for other browsers (Firefox) */
+.game-images {
+    scrollbar-width: none; /* Firefox-specific property */
+}
+
+.card {
+    position: relative;
+    width: 85%;
+    padding: clamp(15px, 2vw, 20px);
+    background: rgba(227,190,102, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(182,137,51, 0.3);
+    color: rgb(182,137,51);
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    flex: 1; /* Allow the profile card to take up available space */
+    min-width: 300px; /* Ensure a minimum width for the card */
+    display: flex; /* Ensure the card content is laid out in a row */
+    flex-direction: row; /* Keep the content inside the card in a row */
+}  
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 40px rgba(182,137,51, 0.4);
+}
+
+.card img {
+    width: clamp(100px, 15vw, 150px);
+    height: clamp(100px, 15vw, 150px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(182,137,51);
+    flex-direction: column;
+}
+
+.card-content {
+    text-align: left;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h1 {
+    font-size: clamp(18px, 4vw, 24px);
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(227,190,102, 0.8);
+}
+
+.card-content p {
+    font-size: clamp(12px, 2vw, 14px);
+    line-height: 1.5;
+}
+
+/* Animated Text Highlight */
+@keyframes gradientAnimation {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+span {
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        #e3be66,
+        #b68933,
+        #6bc399,
+        #89d89b,
+        #f2e7a6,
+        #e3be66
+    );
+    background-size: 400% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+/* Section Title Glow */
+.section-title {
+    text-align: center;
+    font-size: clamp(22px, 5vw, 32px);
+    margin: 40px 0 20px;
+    color: rgb(182,137,51);
+    text-shadow: 0 0 10px rgba(227,190,102, 0.7), 0 0 20px rgba(182,137,51, 0.4);
+}
+
+#leafCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Allow height to be dynamically set */
+    z-index: 0;
+    pointer-events: none;
+}
+/* Social Icons */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.glow-icon {
+    width: 36px;
+    height: 36px;
+    fill: url(#sharedGradient);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 6px rgba(137, 216, 155, 0.8));
+}
+
+.glow-icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px rgba(227, 190, 102, 1));
+}
+
+.music-player-vertical {
+  width: 90%;
+  max-width: 250px;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(182, 137, 51, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+   background: rgba(227,190,102, 0.2);
+}
+
+.visual-box img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #e3be66;
+}
+
+.track-info {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.controls-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.leaf-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.leaf-btn:hover {
+  transform: scale(1.2);
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.volume-waves {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+}
+
+.wave {
+  width: 4px;
+  background: #89d89b;
+  transition: height 0.1s ease;
+}
+
+#seekBar {
+  width: 100%;
+}
+
+#timetrack {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.playlist li {
+  padding: 0.5rem;
+  margin: 0.2rem 0;
+  background: #e3be66;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.playlist li:hover {
+  background: #b68933;
+  color: white;
+}
+
+/* Mobile styles */
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+    .cards-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center-align items */
+        gap: 30px; /* Increase spacing between sections */
+    }
+
+    .card {
+        flex-direction: column; /* Stack the profile image and content vertically */
+        align-items: center; /* Center-align items */
+        text-align: center; /* Center-align text */
+    }
+
+    .card img {
+        margin-right: 0; /* Remove margin on mobile */
+        margin-bottom: 20px; /* Add spacing below the image */
+    }
+
+    .gameFavorites {
+        width: 100%; /* Make the game favorites section take up full width */
+        max-width: 500px; /* Limit the width for better readability */
+        align-items: center; /* Center-align the game favorites section */
+    }
+}
+.gameFavorites {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+  }
+  
+  .gameFavorites h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .gameFavorites img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 8px  #89d89b;
+  }
+  
+* {
+  cursor: url('cursor-leaf.png') 7 7, auto;
+}
+
+/* Disable scrolling on desktop */
+@media only screen and (min-width: 769px) {
+    body {
+        overflow: hidden; /* Disable scrolling */
+    }
+}
+

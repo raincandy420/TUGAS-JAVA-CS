@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  h1, .box-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #03fa6e, 0 0 20px #03fa6e, 0 0 30px #03fa6e;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  
+
+.box-container {
+  background-color: rgba(23, 24, 16, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #03fa6e;
+  width: 70vw;         /* 70% of viewport width */
+  max-width: 900px;    /* Optional: limit max width on large screens */
+  min-width: 220px;    /* Optional: prevent too small on mobile */
+  text-align: left;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards 1s;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  
+  .box-container p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .box-container ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  
+  .box-container a {
+    color: #03fa6e;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .box-container a:hover {
+    color: #00ffab;
+  }
+  
+
+
+
+small {
+  font-size: 0.85em;
+  color: #00ffab;
+  text-shadow: none;
+}
+
+
+/* --- ABSEN & GURU LIST --- */
+.absen-list,
+.guru-list {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);      /* 2 rows */
+  grid-auto-flow: column;                  /* auto columns */
+  gap: 16px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 0 8px;
+  margin: 0;
+  color: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  list-style: none;
+  counter-reset: absen;
+}
+
+.guru-list {
+  counter-reset: guru;
+}
+
+.absen-list::-webkit-scrollbar,
+.guru-list::-webkit-scrollbar {
+  display: none;
+}
+
+.absen-list > li,
+.guru-list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 100px;
+  color: #fff;
+  position: relative;
+  counter-increment: absen;
+  margin-bottom: 8px;
+  padding-left: 1.7em; /* Slightly more space for number */
+}
+
+.guru-list > li {
+  counter-increment: guru;
+}
+
+/* Neon number, closer to button */
+.absen-list > li::before,
+.guru-list > li::before {
+  content: counter(absen) ".";
+  color: #03fa6e;
+  text-shadow: 0 0 8px #03fa6e;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: absolute;
+  left: 0.1em; /* Closer to button */
+  top: 0.1em;
+}
+
+.guru-list > li::before {
+  content: counter(guru) ".";
+}
+
+/* Neon vertical scrollbar for mobile */
+@media (max-width: 600px) {
+ .guru-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns visible */
+    grid-auto-flow: row;                  /* scroll horizontally to see more rows */
+    grid-auto-rows: minmax(100px, 1fr);
+    gap: 16px;
+    max-width: 100%;
+    max-height: 240px;                    /* adjust as needed */
+    overflow-x: hidden;      /* Enable horizontal scroll */
+    overflow-y: auto;
+  }
+  .absen-list {
+    overflow-x: hidden;      /* Enable horizontal scroll */
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns visible */
+    grid-auto-flow: row;                   /* scroll horizontally to see more rows */
+    grid-auto-rows: minmax(100px, 1fr);
+    gap: 16px;
+    max-width: 100%;
+    max-height: 240px;                     /* adjust as needed */
+  }
+  .absen-list li,
+  .guru-list li {
+    margin-top: 9px;
+    margin-bottom: 5px;
+  }
+  .absen-list::-webkit-scrollbar,
+  .guru-list::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+    display: block;
+  }
+  .absen-list::-webkit-scrollbar-thumb,
+  .guru-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ffab, #03fa6e, #00ffab);
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00ffab, 0 0 20px #03fa6e;
+  }
+  .absen-list::-webkit-scrollbar-thumb:hover,
+  .guru-list::-webkit-scrollbar-thumb:hover {
+    background: #00ffab;
+    box-shadow: 0 0 20px #00ffab, 0 0 40px #03fa6e;
+  }
+  .absen-list::-webkit-scrollbar-track,
+  .guru-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .absen-list,
+  .absen-list::-webkit-scrollbar-thumb,
+  .guru-list,
+  .guru-list::-webkit-scrollbar-thumb {
+    cursor: pointer;
+  }
+}
+
+/* Desktop: 2 rows, auto columns */
+@media (min-width: 601px) {
+  .absen-list,
+  .guru-list {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    grid-auto-flow: column;                /* auto columns */
+    grid-auto-columns: minmax(120px, 1fr);
+    gap: 16px;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #00ffab22 transparent;
+    list-style: none;
+  }
+  .guru-list {
+    max-height: 260px; /* Slightly more space for desktop if needed */
+  }
+  .absen-list li,
+  .guru-list li {
+  margin-top: 10px;
+  }
+}
+  
+
+
+.absen-btn svg {
+  margin-bottom: 6px;
+  filter: drop-shadow(0 0 6px #03fa6e88);
+  fill: currentColor;   /* SVG uses text color */
+  color: inherit;       /* Inherit from button */
+  width: 2.5em;
+  height: 2.5em;
+  display: block;
+}
+
+/* Make absen-btn square */
+.absen-btn {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #03fa6e; /* Set text and SVG color */
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #03fa6e55;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.absen-btn:hover {
+  background: #23251a;
+  color: #00ffab;
+  box-shadow: 0 0 25px #03fa6e99;
+}
+
+@media (max-width: 600px) {
+.box-container {
+  width: 70vw;
+  max-height: 80vh;
+  max-width: 100%;
+  min-width: 220px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+}
+.box-container p.no-absen {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  display: block;
+}

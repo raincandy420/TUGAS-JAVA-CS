@@ -1,0 +1,152 @@
+body {
+    background-color: #ffe6f2; /* Soft pink romantic background */
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Heart animation canvas */
+#heartCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Container adjustments */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 5px solid transparent;
+    animation: borderAnimation 3s linear infinite;
+    transition: backdrop-filter 0.5s ease-in-out, filter 0.5s ease-in-out;
+    
+    filter: blur(10px);
+    width: 70%;
+    max-width: 750px; /* Increased width */
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    border-radius: 20px;
+    backdrop-filter: blur(12px); /* Enhanced frosted glass effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin: auto;
+    position: relative;
+    top: 60px;
+}
+
+/* Border animation */
+@keyframes borderAnimation {
+    0% { border-image: linear-gradient(90deg, #ff1493, #ff0000) 1; }
+    25% { border-image: linear-gradient(180deg, #ff0000, #ff69b4) 1; }
+    50% { border-image: linear-gradient(270deg, #ff69b4, #ff4500) 1; }
+    75% { border-image: linear-gradient(360deg, #ff4500, #ff1493) 1; }
+    100% { border-image: linear-gradient(90deg, #ff1493, #ff0000) 1; }
+}
+
+/* Title animation */
+h1 {
+    font-size: 3em; /* Bigger text */
+    font-family: 'Arial', sans-serif;
+    color: #ff1493;
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff1493;
+    animation: glow 1.5s infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff1493;
+    }
+    to {
+        text-shadow: 0 0 15px #ff69b4, 0 0 25px #ff1493, 0 0 35px #ff69b4;
+    }
+}
+
+/* Image styling */
+#leaf {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 150px; /* Resized */
+    height: auto;
+    border: 3px solid #ff1493;
+    border-radius: 10px;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* More spacing */
+    margin-top: 20px;
+}
+
+/* Buttons */
+button {
+    font-size: 1.7em; /* Bigger buttons */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px;
+    background-color: #ff1493;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff69b4;
+}
+
+/* Monika sprites */
+.sprite {
+    display: none;
+}
+
+/* Show Content Button */
+#showcontent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 35px;
+    font-size: 22px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Hover & Click Effects */
+#showcontent:hover {
+    background-color: hotpink;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#showcontent:active {
+    background-color: #d14772;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Hide button after clicking */
+.hidden {
+    display: none;
+}
+
+/* Unblur effect */
+.unblurred {
+    backdrop-filter: none;
+    filter: none;
+}

@@ -1,0 +1,226 @@
+# Karete Shinryoku (枯れ葉深緑)
+## The Withering Leaf Spirit
+
+---
+
+## Basic Information
+
+**Species:** Kodama (木霊 - Tree Spirit)  
+**Ability:** Manipulation of leaf essence and plant communication  
+**Age:** Over 800 years (appears as young adult)  
+**Occupation:** Guardian of the Autumn Grove  
+**Residence:** The Heart of Leaves - a sacred clearing where all seasons exist simultaneously
+
+---
+
+## Physical Appearance
+
+**Height:** 158cm (5'2")  
+**Hair:** Deep forest green that shifts to autumn colors (gold, red, brown) based on her emotions  
+**Eyes:** Amber with flecks that look like tiny leaves  
+**Clothing:** 
+- **Main Dress:** A flowing, asymmetrical dress that appears to be woven from actual autumn leaves in various stages of decay - some sections are vibrant gold and red, others are brown and brittle, and some areas seem to shift between states
+- **Layered Design:** Multiple translucent layers that create depth, with each layer representing a different season of decay - the innermost layer is spring green, middle layers transition through summer and autumn, outer layer is winter-bare
+- **Living Accessories:** 
+  - A cape made of interconnected branches that grow and wither in real-time
+  - Arm guards crafted from crystallized tree bark with veins of amber
+  - A belt of twisted vines that blooms tiny flowers which immediately wilt and fall
+- **Footwear:** Elegant boots that appear carved from a single piece of wood, with roots growing from the soles that leave temporary marks on the ground
+- **Unique Details:**
+  - Dress hem is intentionally tattered and asymmetrical, looking naturally weathered
+  - Sleeves have "growth rings" like tree trunks, showing her age
+  - Small holes in the fabric that look like natural decay, but are perfectly placed for aesthetic effect
+  - The dress changes texture throughout the day - morning silk, noon cotton, evening rough bark texture
+
+**Distinctive Features:**
+- Leaves constantly fall gently around her, disappearing before they hit the ground
+- Her shadow appears as a great tree rather than a human silhouette
+- Skin has a subtle bark-like texture on her arms and legs
+- When excited, tiny flower buds appear in her hair
+
+---
+
+## Personality
+
+**Core Traits:**
+- **Ancient Wisdom:** Speaks in metaphors related to seasons and growth
+- **Innocent Curiosity:** Despite her age, finds human customs fascinating and strange
+- **Protective Nature:** Fiercely guards forests but is gentle with those who respect nature
+- **Cyclical Thinking:** Views everything through the lens of natural cycles - birth, growth, decay, renewal
+
+**Speech Pattern:**
+- Speaks softly, like wind through leaves
+- Uses nature metaphors for everything ("Your words bloom with truth" instead of "you're right")
+- Sometimes trails off mid-sentence, as if listening to something others can't hear
+- Refers to seasons and natural phenomena as old friends
+
+**Quirks:**
+- Cannot lie - kodama are bound to truth like trees are bound to soil
+- Gets drowsy during winter conversations, energetic during spring topics
+- Unconsciously hums melodies that sound like wind through different types of trees
+- Collects fallen leaves from every tree she meets, keeping them in a magical pouch
+
+---
+
+## Background Story
+
+### Origin
+Born from the collective consciousness of fallen leaves across Gensokyo's ancient forests, Shinryoku is unique among kodama. While most kodama embody a single tree, she represents the ephemeral beauty of leaves themselves - the part of trees that lives, dies, and is reborn each year.
+
+### Past
+For centuries, she existed as a whisper in the wind, a rustle in the undergrowth. She gained physical form only 200 years ago when a grieving human child, lost in the forest, cried among a pile of autumn leaves. Her tears gave Shinryoku the emotional connection needed to manifest.
+
+### Present
+Now she dwells in the Heart of Leaves, a mystical grove where she tends to the spiritual essence of all plant life in Gensokyo. She rarely leaves her domain, but recent incidents have drawn her into the broader world of Gensokyo's supernatural conflicts.
+
+---
+
+## Powers and Abilities
+
+### Primary Ability: "Manipulation of the Essence of Decay"
+The power to control the concept of decay itself - not just making things rot, but controlling the entire process of breakdown, transformation, and the beauty found within deterioration. She can accelerate, reverse, or suspend the natural decay cycle of any organic matter.
+
+**Core Applications:**
+- **Decay Acceleration:** Ages objects instantly (fresh leaf → withered → dust)
+- **Decay Reversal:** Restores things to previous states (ash → dead leaf → fresh leaf)  
+- **Decay Suspension:** Freezes things at their most beautiful moment of deterioration
+- **Selective Decay:** Can decay specific parts while preserving others
+- **Conceptual Decay:** Can apply decay to abstract things (memories fade, magic weakens, emotions wither)
+
+### Secondary Applications:
+- **Temporal Perception:** Sees the "decay timeline" of everything around her
+- **Essence Preservation:** Maintains the spiritual essence of things even as they physically decay
+- **Beauty in Endings:** Finds and enhances the aesthetic peak moment during any decay process
+- **Cycle Mastery:** Understands that all decay leads to new growth
+
+### Combat Style:
+- **Decay State Control:** Uses different stages of decay as tactical options
+  - Fresh state: Full power, predictable patterns
+  - Withering state: Unpredictable, changes mid-attack  
+  - Dead state: Passes through some defenses, lingers longer
+  - Beyond death: Becomes conceptual, affects non-physical things
+
+- **Temporal Battlefield:** Manipulates the decay timeline
+  - Creates "decay zones" where everything ages rapidly
+  - "Preservation bubbles" where nothing can deteriorate
+  - Overlaps multiple decay states in the same space
+
+- **Conceptual Attacks:** Applies decay beyond physical matter
+  - Can make opponent's spell cards "wither" and lose power
+  - Causes magical barriers to "age" and weaken
+  - Makes memories of attack patterns fade, forcing opponents to relearn mid-fight
+
+- **Aesthetic Combat:** Finds the most beautiful moment in any destruction
+  - Her attacks are most dangerous when they look most beautiful
+  - Can make opponents hesitate by creating stunning decay patterns
+  - Victory through overwhelming beauty rather than overwhelming force
+
+---
+
+## Spell Cards
+
+### Easy Difficulty:
+- **Fallen Sign "Withered Leaf Spiral"** 
+  - *Pattern:* Dried leaves spiral inward from screen edges in slow, predictable rotations
+  - *Ability Use:* Basic leaf essence manipulation - transforms fresh leaves to withered state mid-flight
+
+- **Decay Sign "Autumn's End Blessing"** 
+  - *Pattern:* Gentle waves of leaves that visibly age and change color as they cross the screen
+  - *Ability Use:* Demonstrates basic decay acceleration - bullets become more dangerous as they age mid-flight
+
+### Normal Difficulty:
+- **Withering Sign "Dance of the Dying Grove"** 
+  - *Pattern:* Some bullets decay into fragments mid-flight while others restore themselves from dust
+  - *Ability Use:* Decay reversal and acceleration simultaneously - complete control over the decay timeline
+
+- **Cycle Sign "From Life to Death to Life"** 
+  - *Pattern:* Bullets transform through complete decay cycles - birth, peak, decay, death, then rebirth as new bullets
+  - *Ability Use:* Full cycle mastery - demonstrates that decay is not an ending but a transformation
+
+### Hard Difficulty:
+- **Ancient Sign "Thousand Years of Decay"** 
+  - *Pattern:* Complex mandala formations showing leaves in various stages of decomposition, each stage with different bullet behaviors
+  - *Ability Use:* Time-dilated essence reading - experiences and projects the full history of leaf decay across centuries
+
+- **Forbidden Art "Beauty in Death's Embrace"** 
+  - *Pattern:* Attacks suspended at their moment of perfect decay - beautiful but frozen in time, then released all at once
+  - *Ability Use:* Decay suspension - captures the peak aesthetic moment of deterioration and weaponizes it
+
+### Lunatic Difficulty:
+- **Ultimate Sign "All Things Must Wither"** 
+  - *Pattern:* The battlefield itself begins to decay - background elements age and crumble while bullets pass through the deteriorating reality
+  - *Ability Use:* Conceptual decay - applies decay to abstract concepts like "safety zones" and "predictable patterns"
+
+- **Kodama's Secret "The Last Leaf of Winter"** 
+  - *Pattern:* A single massive golden leaf appears, then fractures into increasingly complex geometric patterns of smaller leaves
+  - *Ability Use:* Essence multiplication - takes the concentrated life force of one perfect leaf and divides it infinitely while maintaining its power
+
+### Last Word:
+- **"Even in Death, Beauty Remains"** 
+  - *Pattern:* Reality itself decays around the player - spell card rules, bullet patterns, even the concept of "winning" begins to wither, leaving only pure aesthetic experience
+  - *Ability Use:* Ultimate conceptual decay - breaks down the very framework of the battle while preserving only beauty
+
+---
+
+## Relationships
+
+### Reimu Hakurei
+Respects the shrine maiden's role in maintaining balance, though she doesn't understand human spiritual practices. Often leaves small offerings of perfect leaves at the shrine.
+
+### Marisa Kirisame
+Wary of the witch's tendency to "borrow" mushrooms and plants from the forest. Their interactions are polite but tense.
+
+### Yuuka Kazami
+Complex relationship - Yuuka represents the aggressive, dominating aspect of plant life, while Shinryoku embodies the gentle, cyclical nature. They respect each other but have fundamentally different philosophies.
+
+### Alice Margatroid
+Curious about Alice's dolls, seeing them as an attempt to give life to inanimate objects. Sometimes provides rare wood for Alice's crafting.
+
+### Keine Kamishirasawa
+Appreciates Keine's role as a guardian and teacher. They share stories - Keine of human history, Shinryoku of the forest's memory.
+
+### Cirno
+Finds the ice fairy's eternal winter amusing and somewhat sad. Tries to teach her about the beauty of change and seasons.
+
+---
+
+## Stage Information
+
+### Stage Location: "The Heart of Leaves - Eternal Autumn Grove"
+A mystical clearing where all four seasons exist simultaneously in different sections. Ancient trees form a perfect circle around a central glade where Shinryoku dwells.
+
+**Stage Mechanics:**
+- Background changes to match Shinryoku's current spell card season
+- Leaf particles create visual interference during certain attacks
+- The music incorporates actual sounds of wind through different types of trees
+
+**Music Theme:** "Whispers of the Eternal Grove ~ Ancient Kodama's Lament"
+A haunting melody that shifts between seasons, incorporating natural sound elements.
+
+---
+
+## Dialogue Examples
+
+**Meeting Reimu:**
+*"Ah, the red-white miko... Your aura carries the scent of many resolved incidents. Tell me, do you ever tend the sacred tree at your shrine? It whispers of loneliness."*
+
+**Fighting Quote:**
+*"Like autumn storms, conflict is natural... but even the mightiest typhoon must respect the deep roots that anchor the earth."*
+
+**Victory Quote:**
+*"Your defeat blooms into wisdom, just as fallen leaves nurture new growth. Rest now, and let understanding take root."*
+
+**Defeat Quote:**
+*"I return to the soil from which I came... but remember, young sprout - every ending seeds a new beginning..."*
+
+---
+
+## Trivia
+
+- Her name "Karete" (枯れ葉) literally means "withered/dried leaves," while "Shinryoku" (深緑) means "deep green," creating a poetic contrast between death and life
+- She cannot cross running water easily, as it disrupts her connection to rooted plant life
+- Her favorite season changes cyclically every few decades
+- She's one of the few youkai who can make Yuuka genuinely smile
+- Despite her ancient age, she's still considered young by kodama standards
+- Her crown changes to match whatever trees are in bloom nearby
+- She's never seen the ocean and is both fascinated and terrified by the idea of endless water without trees
