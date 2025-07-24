@@ -5,8 +5,8 @@ public class diri {
     String alamat = "kairacondong";
     String nis = "123456789";
     String phone = "08888888888";
-    String email = "alif@example.com";
-
+    String email = "alifismailkhadafi@gmail.com";
+git 
     public static void main(String[] args) {
         diri data = new diri();
         System.out.println(data.name);
